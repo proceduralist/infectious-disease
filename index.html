@@ -532,8 +532,7 @@ const LIBRARY = {
  hiv:{t:"Management of Newly Diagnosed HIV Infection (In the Clinic)",src:"Feinberg & Keeshin, Ann Intern Med 2017",file:"feinberg-keeshin-2017-management-of-newly-diagnosed-hiv-infection.pdf",topic:"HIV / STI"},
  lyme:{t:"Lyme Disease (In the Clinic)",src:"Hu, Ann Intern Med 2016",file:"hu-2016-lyme-disease.pdf",topic:"Lyme / tick-borne"},
  candida:{t:"Clinical Practice Guideline for the Management of Candidiasis (2016 Update)",src:"IDSA 2016 (Pappas et al.), Clin Infect Dis",file:"civ933.pdf",topic:"Candidiasis"},
- febneut:{t:"Management of febrile neutropaenia: ESMO Clinical Practice Guidelines",src:"Klastersky et al., Ann Oncol 2016",file:"1-s2.0-S0923753419316436-main.pdf",topic:"Febrile neutropenia"},
- micro:{t:"Microbiology (open textbook)",src:"Reference text",file:"microbiology_-_WEB.pdf",topic:"Microbiology fundamentals",big:true}
+ febneut:{t:"Management of febrile neutropaenia: ESMO Clinical Practice Guidelines",src:"Klastersky et al., Ann Oncol 2016",file:"1-s2.0-S0923753419316436-main.pdf",topic:"Febrile neutropenia"}
 };
 
 /* ---------- HELPERS ---------- */
@@ -783,7 +782,6 @@ PAGES.library=(c)=>{
   let h='<table><thead><tr><th>Topic</th><th>Source</th><th>Citation</th></tr></thead><tbody>';
   Object.values(LIBRARY).forEach(L=>{const cell=L.big?(esc(L.t)+' <span class="flag">(large file — kept in your original ID folder)</span>'):'<a href="references/'+encodeURIComponent(L.file)+'" target="_blank">'+esc(L.t)+'</a>';h+='<tr><td>'+esc(L.topic)+'</td><td>'+cell+'</td><td class="small muted">'+esc(L.src)+'</td></tr>';});
   h+='</tbody></table>';card.innerHTML=h;c.append(card);
-  c.append(ce("div","callout small","Source PDFs open from the <b>references/</b> folder kept beside this app. Keep that folder with the HTML file when you move it. The full microbiology textbook is very large and was left in your original ID folder."));
 };
 
 /* ---------- CONSULT NOTE BUILDER ---------- */
